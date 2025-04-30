@@ -15,6 +15,7 @@ def get_recommendations(
     db: Session = Depends(get_db)
 ):
     return recommendation_service.get_recommendations(db, nights, destination_id)
+raise HTTPException(status_code=404, detail="No recommendations found")
 
 # from fastapi import APIRouter, Depends, HTTPException
 # from sqlalchemy.orm import Session
